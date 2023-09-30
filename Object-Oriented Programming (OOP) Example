@@ -1,0 +1,14 @@
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  getFullName() {
+    return `${this.name}`;
+  }
+
+  isAdult() {
+    return this.age >= 18;
+  }
+}
