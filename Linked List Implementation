@@ -1,0 +1,24 @@
+class ListNode {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+
+  addNode(data) {
+    // Add node logic here
+  }
+
+  removeNode(data) {
+    // Remove node logic here
+  }
+
+  traverse() {
+    // Traversal logic here
+  }
+}
