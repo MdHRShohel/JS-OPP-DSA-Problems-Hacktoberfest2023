@@ -1,0 +1,13 @@
+function isEven(number) {
+  return number % 2 === 0;
+}
+
+function isOdd(number) {
+  return number % 2 !== 0;
+}
+
+// Test cases
+console.log(isEven(4));  // true
+console.log(isEven(7));  // false
+console.log(isOdd(4));   // false
+console.log(isOdd(7));   // true
