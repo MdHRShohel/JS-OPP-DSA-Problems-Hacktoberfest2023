@@ -1,0 +1,22 @@
+function generateRandomNumbers(count, min, max) {
+  const randomNumbers = [];
+  for (let i = 0; i < count; i++) {
+    const randomNumber = Math.random() * (max - min) + min;
+    randomNumbers.push(randomNumber);
+  }
+  return randomNumbers;
+}
+
+function findRealNumbers(numbers) {
+  return numbers.filter(number => Number.isFinite(number) && !Number.isInteger(number));
+}
+
+const numberOfRandomNumbers = 10; // Number of random numbers to generate
+const minRandomNumber = 1; // Minimum random number
+const maxRandomNumber = 100; // Maximum random number
+
+const randomNumbers = generateRandomNumbers(numberOfRandomNumbers, minRandomNumber, maxRandomNumber);
+console.log('Generated random numbers:', randomNumbers);
+
+const realNumbers = findRealNumbers(randomNumbers);
+console.log('The real numbers are:', realNumbers);
