@@ -1,0 +1,22 @@
+function generateRandomNumbers(count, min, max) {
+  const randomNumbers = [];
+  for (let i = 0; i < count; i++) {
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    randomNumbers.push(randomNumber);
+  }
+  return randomNumbers;
+}
+
+function findMaxNumber(numbers) {
+  return Math.max(...numbers);
+}
+
+const numberOfRandomNumbers = 10; // Number of random numbers to generate
+const minRandomNumber = 1; // Minimum random number
+const maxRandomNumber = 100; // Maximum random number
+
+const randomNumbers = generateRandomNumbers(numberOfRandomNumbers, minRandomNumber, maxRandomNumber);
+console.log('Generated random numbers:', randomNumbers);
+
+const maxNumber = findMaxNumber(randomNumbers);
+console.log('The maximum number is:', maxNumber);
