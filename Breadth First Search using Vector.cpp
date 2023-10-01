@@ -4,10 +4,10 @@ using namespace std;
 const int N = 1e5+2;
 vector<int> nodeswithedges[N];
 
-void BFS(int node)
+void BFS(int size, int node)
 {
     vector<bool> visited;
-    visited.resize(6, false);
+    visited.resize(size, false);
     deque<int> dq;
     visited[node] = true;
     dq.push_back(node);
@@ -38,7 +38,7 @@ int main()
         nodeswithedges[y].push_back(x);
     }
 
-    BFS(rootnode);
+    BFS(n,rootnode);
 
     return 0;
 }
