@@ -1,0 +1,17 @@
+function calculateAge(birthDate) {
+  const today = new Date();
+  const birthDateObj = new Date(birthDate);
+  let age = today.getFullYear() - birthDateObj.getFullYear();
+  const monthDifference = today.getMonth() - birthDateObj.getMonth();
+
+  if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDateObj.getDate())) {
+    age--;
+  }
+
+  return age;
+}
+
+const birthDate = '1990-05-15'; // Assuming the format is YYYY-MM-DD
+const age = calculateAge(birthDate);
+
+console.log('Age:', age);
