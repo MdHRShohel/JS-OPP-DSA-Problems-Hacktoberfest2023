@@ -1,0 +1,36 @@
+#algoritm{
+  position: absolute;
+  left: 120px;
+  top: 450px;
+}
+
+#reset{
+  position: absolute;
+  left: 50px;
+  top: 450px;
+}
+
+#speed{
+  position: absolute;
+  left: 120px;
+  top: 485px;
+}
+
+#elements{
+  position: absolute;
+  left: 120px;
+  top: 520px;
+}
+
+
+#speedText{
+  position: absolute;
+  left: 120px;
+  top: 485px;
+}
+
+#elementsText{
+  position: absolute;
+  left: 120px;
+  top: 520px;
+}
