@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Guess The Number</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">GN</div>
+      <div class="right-side">
+        <div class="lifes">
+          <span></span>
+        </div>
+        <div class="dark-mode-toggle" id="dark-light-toggle">
+          <span class="material-icons-outlined">
+            </span>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="game-container">
+      <div class="visual-hint">
+        <span class="material-icons-outlined">
+          question_mark
+          </span>
+      </div>
+      <input type="number" placeholder="put a number" id="number">
+      <div class="game-buttons">
+        <button id="play-game">play</button>
+        <button id="replay-game">replay</button>
+      </div>
+      <div class="guesses">
+        <h2>your guesses</h2>
+        <ul>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
