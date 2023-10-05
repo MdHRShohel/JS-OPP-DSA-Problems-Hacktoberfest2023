@@ -1,0 +1,114 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #fff;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    /* justify-content: left; */
+    min-height: 100vh;
+    height: auto;
+}
+.wrapper .image{
+    display: flex;
+   justify-content: right;
+   /* background-color: rgb(37, 150, 190); */
+   margin-left: 15%;
+}
+.wrapper .image img{
+    max-width: 100%;
+    border: .1rem groove rgb(37, 150, 190);
+    box-shadow: 0 .5rem 1rem rgba(37, 150, 190, 0.3);
+    height: auto;
+    transition: 0.5s ease;
+}
+.wrapper .image:hover img{
+    transform: scale(1.2);
+}
+.form-holder{
+    background: rgba(37, 150, 190, 0.5);
+    width: 450px;
+    max-width: 90%;
+    padding: 35px 0px;
+    opacity: .5;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+.logo{
+    display: block;
+width: 100px;
+margin: 0px auto;
+border-radius: 20px;
+background: #222;
+padding: 10px;
+}
+.form-holder h2{
+color: rgb(37, 150, 190);
+padding: 10px;
+text-align: center;
+font-size: 22px;
+}
+.form .form-group{
+width: 90%;
+margin: 20px auto;
+padding: 10px;
+position: relative;
+}
+.form-group input{
+width: 100%;
+padding: 10px;
+background: #222;
+border: none;
+outline: none;
+color: #fff;
+font-size: 15px;
+border-bottom: 2px solid #777;
+border-radius: 5px;
+padding-left: 40px;
+}
+.form-group img{
+width: 26px;
+position: absolute;
+left: 15px;
+top: 13px;
+}
+
+.form-group button{
+width: 100%;
+padding: 10px;
+background: transparent;
+border: none;
+outline: none;
+color: #fff;
+font-size: 15px;
+border: 2px solid #777;
+border-radius: 5px;
+cursor: pointer;
+}
+.form-group input:focus{
+background: #333;
+border-color: #0088FF;
+}
+.form-group button:hover{
+background: #333;
+}
+.form-group a{
+color: #999;
+text-decoration: none;
+font-size: 14px;
+}
+.form-group a:hover{
+color: #555;
+}
+.form-group .right-link{
+float: right;
