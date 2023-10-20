@@ -1,0 +1,25 @@
+div {
+    padding: 18px;
+    height: 90px;
+    display: inline-block;
+    background-color: white;
+    text-align: center; 
+    font-family: PT serif;
+    font-size: 68px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px rgb(0, 0, 0);
+
+}
+
+body {
+    background-color: darkslategray;
+}
+
+section {
+    margin-top: 200px;
+}
+
+span {
+    font-family: PT serif;
+    font-size: 58px;
+}
