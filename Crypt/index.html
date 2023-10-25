@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <!-- Primary Meta Tags -->
+    <title>Crypt Dashboard - ArizkiNewbie</title>
+    <meta name="title" content="Crypt Dashboard - ArizkiNewbie" />
+    <meta name="description" content="Encrypt is the method by which information is converted into secret code that hides the information's true meaning. Otherwise Decrypt. The science of encrypting and decrypting information is called cryptography. Cryptography is known to come from the Greek, crypto and graphia. Where crypto means hiding, while graphia means writing. So that it can be explained that cryptography is a science that studies mathematical techniques related to aspects of information security. Examples include data validity, data confidentiality, data credibility, data integrity, and data authentication. However, not all aspects of information security can be overcome with cryptography." />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://crypt-arizkinewbie.vercel.app/" />
+    <meta property="og:title" content="Crypt Dashboard - ArizkiNewbie" />
+    <meta property="og:description" content="Encrypt is the method by which information is converted into secret code that hides the information's true meaning. Otherwise Decrypt. The science of encrypting and decrypting information is called cryptography. Cryptography is known to come from the Greek, crypto and graphia. Where crypto means hiding, while graphia means writing. So that it can be explained that cryptography is a science that studies mathematical techniques related to aspects of information security. Examples include data validity, data confidentiality, data credibility, data integrity, and data authentication. However, not all aspects of information security can be overcome with cryptography." />
+    <meta property="og:image" content="favicon.ico" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">
+        <img src="favicon.ico" style="width: 5%;" alt="icon"> Crypt Dashboard
+      </h1>
+      <p> Encrypt is the method by which information is converted into secret code that hides the information's true meaning. Otherwise Decrypt. The science of encrypting and decrypting information is called cryptography. Cryptography is known to come from the Greek, crypto and graphia. Where crypto means hiding, while graphia means writing. So that it can be explained that cryptography is a science that studies mathematical techniques related to aspects of information security. Examples include data validity, data confidentiality, data credibility, data integrity, and data authentication. However, not all aspects of information security can be overcome with cryptography. </p>
+      <hr />
+      <h2 class="subheader color-blue">Crypt Tool List</h2>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <!--Caesar-->
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">Caesar Cipher</button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body"> The Caesar cipher (or Caesar code) is a monoalphabetic substitution cipher, where each letter is replaced by another letter located a little further in the alphabet (therefore shifted but always the same for given cipher message). The shift distance is chosen by a number called the offset, which can be right (A to B) or left (B to A).
+              <hr />
+              <div class="container">
+                <h2 class="subheader color-red">Encoding</h2>
+                <p>Enter a phrase and a key between 0-25 to cipher your message.</p>
+                <input id="userEncodeInput" class="user-input" type="text" />
+                <input id="cipherEncodeKey" type="number" min="0" max="25" value="0" />
+                <h1 class="cipher-output color-red" id="cipherEncodeOutput"></h1>
+                <hr />
+                <h2 class="subheader color-blue">Decoding</h2>
+                <p>Enter an encoded phrase and the key used to decipher your message.</p>
+                <input id="userDecodeInput" class="user-input" type="text" />
+                <input id="cipherDecodeKey" type="number" min="0" max="25" value="0" />
+                <h1 class="cipher-output color-blue" id="cipherDecodeOutput"></h1>
+              </div>
+              <script src="js/caesar.js"></script>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <!--Columnar Transposition-->
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">Columnar Transposition Cipher</button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body"> The Columnar Transposition Cipher is a form of transposition cipher. Columnar Transposition involves writing the plaintext out in rows, and then reading the ciphertext off in columns one by one.
+              <hr />
+              <div class="container">
+                <p>Plaintext <br />
+                  <textarea id="p" name="p" rows="4" cols="50">unggul</textarea>
+                </p>
+                <p> Keyword = <input id="key" name="key" size="10" value="ueu" type="text" /> pad character = <input id="pc" name="pc" size="1" value="" type="text" />
+                </p>
+                <p>
+                  <input type="button" name="btnEn" value="Encrypt" onclick="handleEncrypt()" />
+                </p>
+                <p>Ciphertext <br />
+                  <textarea id="c" name="c" rows="4" cols="50"></textarea>
+                </p>
+                <p>
+                  <input type="button" name="btnDe" value="Decrypt" onclick="handleDecrypt()" />
+                </p>
+                <script src="js/columnar.js"></script>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <!--Vigenere-->
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">Vigenere Cipher</button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body"> Vigenère cipher is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers, based on the letters of a keyword. It employs a form of polyalphabetic substitution. A polyalphabetic cipher is any cipher based on substitution, using multiple substitution alphabets. The encryption of the original text is done using the Vigenère square or Vigenère table.
+              <hr />
+              <!-- Vigenere -->
+              <div class="container">
+                <form class="form-horizontal" id="encript">
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="key">The encription key</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" type="text" id="key" size="50" value="newbie" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="palintext">Plain text</label>
+                    <div class="col-sm-10">
+                      <textarea class="form-control" id="palintext" cols="50" rows="5">SOBAT UNGGUL</textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button class="btn btn-primary" id="btn-encript" type="button">Encrypt</button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label" for="encryptedtext">Encrypted text</label>
+                    <div class="col-sm-10">
+                      <textarea class="form-control" id="encryptedtext" cols="50" rows="5"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button class="btn btn-danger" id="btn-decript" type="button">Decrypt</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <script src="js/vigenere.js"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <small class="card-footer text-muted text-end">
+        <span>Universitas Esa Unggul | <a href="https://www.linkedin.com/in/arizkinewbie/">Arizki Putra Rahman</a> & <a href="https://www.linkedin.com/in/imam-sutanto-a2780249/">IMAM SUTANTO, S.Kom, M.Kom</a>
+        </span>
+      </small>
+    </div>
+  </body>
+</html>
