@@ -59,7 +59,9 @@ function reset(algo, length){
 	algoritm = "radixSort";
   }else if(algo == 6){
    algoritm = "bogoSort";
-  }else{
+  }else if(algo == 7){
+	algoritm = "heapSort";
+ }else{
 	
   }
   /*
@@ -70,6 +72,7 @@ function reset(algo, length){
 	quickSort
 	radixSort
    bogoSort
+   heapSort
   */
 
 
@@ -197,7 +200,9 @@ function animate(){
 		randomConfiguration();
 	 }
 	 //console.log(arr);
-	}
+	}else if(algoritm == "heapSort"){
+		heapSort();
+	}	
   }
 
 
@@ -205,6 +210,45 @@ function animate(){
   requestAnimationFrame(animate);
 }
 
+
+//for heapSort
+function heapify(n, i) {
+    var largest = i;
+    var left = 2 * i + 1;
+    var right = 2 * i + 2;
+
+    if (left < n && arr[left].val > arr[largest].val) {
+        largest = left;
+    }
+
+    if (right < n && arr[right].val > arr[largest].val) {
+        largest = right;
+    }
+
+    if (largest != i) {
+        var swap = arr[i];
+        arr[i] = arr[largest];
+        arr[largest] = swap;
+
+        heapify(n, largest);
+    }
+}
+
+function heapSort() {
+    var n = arr.length;
+
+    for (var i = Math.floor(n / 2) - 1; i >= 0; i--) {
+        heapify(n, i);
+    }
+
+    for (var i = n - 1; i > 0; i--) {
+        var temp = arr[0];
+        arr[0] = arr[i];
+        arr[i] = temp;
+
+        heapify(i, 0);
+    }
+}
 
 //for selectionSort
 function findSmallestUpwards(x){
