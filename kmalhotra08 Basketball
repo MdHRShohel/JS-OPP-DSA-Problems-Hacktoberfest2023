@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basketball Shooting Game</title>
+</head>
+<body>
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+  <script> 
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const hoopX = canvas.width / 2;
+    const hoopY = 50; 
+    const ballRadius = 10;
+
+    let ballX = canvas.width / 2;
+    let ballY = canvas.height - 30;
+
+    let dx = 2;
+    let dy = -2;
+
+    function drawBasketball() { 
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.beginPath();
+        ctx.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);  
+        ctx.fillStyle = 'orange';
+        ctx.fill();
+        ctx.closePath(); 
+
+        // Draw the basketball hoop 
+        ctx.beginPath(); 
+        ctx.rect(hoopX - 20, hoopY, 40, 10); 
+        ctx.fillStyle = 'red'; 
+        ctx.fill(); 
+        ctx.closePath(); 
+} 
+
+function updateGameArea() { 
+  ballX += dx;
+  ballY += dy; 
+
+  if (ballX + dx > canvas.width - ballRadius || ballX + dx < ballRadius) {
+    dx = -dx; 
+} 
+
+if (ballY + dy < ballRadius) { 
+  dy = -dy; 
+} else if (ballY + dy > canvas.height - ballRadius) { 
+  // Check if the ball enters the hoop 
+  if (ballX > hoopX - 20 && ballX < hoopX + 20) { 
+    alert("You scored!");
+  } 
+  ballY = canvas.height - ballRadius;
+  dy = -dy;
+} 
+
+drawBasketball();
+requestAnimationFrame(updateGameArea);
+}  
+document.addEventListener('keydown', (event) => { 
+  if (event.key === 'ArrowLeft') { 
+    ballX -= 10;
+  } else if (event.key === 'ArrowRight') { 
+    ballX += 10;
+  } 
+}); 
+    updateGameArea(); 
+  </script>
+</body>
+</html
