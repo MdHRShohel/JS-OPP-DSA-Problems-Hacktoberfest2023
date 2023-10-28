@@ -1,0 +1,23 @@
+class Solution {
+    public int trap(int[] height) {
+        //maxleft
+        int leftmax[]= new int[height.length];
+        leftmax[0]=height[0];
+        for(int i=1;i<height.length;i++){
+           leftmax[i] = Math.max(height[i],leftmax[i-1]);
+        }
+        //maxright
+        int maxr[] = new int[height.length];
+        maxr[height.length-1] = height[height.length-1];
+        for(int i=height.length-2;i>=0;i--){
+            maxr[i] = Math.max(height[i],maxr[i+1]);
+        }
+        //loop
+        int trapped=0;
+        for(int i=0;i<height.length;i++){
+             int waterlevel= Math.min(leftmax[i],maxr[i]);
+             trapped+=waterlevel-height[i];
+        }
+        return trapped;
+    }
+}
