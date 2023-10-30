@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Guessing Game</title>
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+    <p>Guess a number between 1 and 100:</p>
+    <input type="text" id="guessField">
+    <input type="submit" value="Submit Guess" id="guessSubmit">
+    <p class="message"></p>
+
+    <script>
+        // Generate a random number between 1 and 100
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        // Get the elements
+        const guessField = document.getElementById('guessField');
+        const guessSubmit = document.getElementById('guessSubmit');
+        const message = document.querySelector('.message');
+
+        // Add an event listener for the submit button
+        guessSubmit.addEventListener('click', checkGuess);
+
+        function checkGuess() {
+            const userGuess = parseInt(guessField.value);
+            attempts++;
+
+            if (userGuess === randomNumber) {
+                message.textContent = `Congratulations! You guessed the number in ${attempts} attempts.`;
+                message.style.color = 'green';
+                setGameOver();
+            } else if (attempts >= 10) {
+                message.textContent = `Game over! The correct number was ${randomNumber}.`;
+                message.style.color = 'red';
+                setGameOver();
+            } else {
+                message.textContent = userGuess < randomNumber ? 'Try a higher number.' : 'Try a lower number.';
+                message.style.color = 'blue';
+            }
+
+            guessField.value = '';
+            guessField.focus();
+        }
+
+        function setGameOver() {
+            guessField.disabled = true;
+            guessSubmit.disabled = true;
+        }
+    </script>
+</body>
+</html>
