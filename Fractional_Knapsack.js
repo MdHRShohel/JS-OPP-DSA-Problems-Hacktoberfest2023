@@ -4,44 +4,42 @@ class Item {
 		this.profit = profit;
 		this.weight = weight;
 	}
+
+	getRatio() {
+		return this.profit / this.weight;
+	}
 }
 
-
-
-function cmp(a, b) {
-	let r1 = a.profit / a.weight;
-	let r2 = b.profit / b.weight;
-	return r1 > r2;
+function compareItems(a, b) {
+	// Compare based on profit-to-weight ratio in descending order
+	return b.getRatio() - a.getRatio();
 }
 
+function fractionalKnapsack(capacity, items) {
+	// Sort items based on the profit-to-weight ratio
+	items.sort(compareItems);
 
-function fractionalKnapsack(W, arr) {
-	// Sorting Item on basis of ratio
-	arr.sort(cmp);
+	let totalProfit = 0.0;
 
-	let finalvalue = 0.0;
-
-	for (let i = 0; i < arr.length; i++) {
-		
-	
-		if (arr[i].weight <= W) {
-			W -= arr[i].weight;
-			finalvalue += arr[i].profit;
-		}
-
-	
-		else {
-			finalvalue += arr[i].profit * (W / arr[i].weight);
+	for (let i = 0; i < items.length; i++) {
+		if (items[i].weight <= capacity) {
+			// Take the whole item
+			capacity -= items[i].weight;
+			totalProfit += items[i].profit;
+		} else {
+			// Take the fraction of the item that fits
+			totalProfit += items[i].profit * (capacity / items[i].weight);
 			break;
 		}
 	}
 
-	return finalvalue;
+	return totalProfit;
 }
 
-let W = 50;
-let arr = [new Item(60, 10), new Item(100, 20), new Item(120, 30)];
+const capacity = 50;
+const items = [new Item(60, 10), new Item(100, 20), new Item(120, 30)];
 
-console.log(fractionalKnapsack(W, arr));
+console.log(fractionalKnapsack(capacity, items));
+
 
 
